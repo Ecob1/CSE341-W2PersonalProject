@@ -41,9 +41,12 @@ PUT http://localhost:3000/contacts/644c7baf2d216b2c35f77681 HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Lupe",
-    "lastName": "Cobian",
+    "firstName": "Omar",
+    "lastName": "Naranjo",
     "email": "email",
     "favoriteColor": "blue",
     "birthday": "04/03/2001"
 }
+
+###
+DELETE  http://localhost:3000/contacts/6454d604174aaed2180a3c39 HTTP/1.1

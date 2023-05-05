@@ -3,7 +3,10 @@ const ObjectId = require("mongodb").ObjectId;
 // Creating a function to get all the contacts.
 const getAll = async (req, res, next) => {
   const result = await mongodb.getDb().db("Guero").collection("Cobian").find();
+
+  
   result.toArray().then((lists) => {
+    console.log(lists)
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(lists);
   });
@@ -31,8 +34,6 @@ const createContact = async (req, res) => {
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday,
   };
-
-  console.log("Testing");
   const response = await mongodb
     .getDb()
     .db("Guero")
@@ -64,8 +65,7 @@ const updateContact = async (req, res) => {
     .db("Guero")
     .collection("Cobian")
     .replaceOne({_id: userId}, contact);
-  console.log(response);
-  if (response.modifiedCount > 0) {
+  if (response.acknowledged) {
     res.status(204).send();
   } else {
     res
@@ -75,4 +75,25 @@ const updateContact = async (req, res) => {
       );
   }
 };
-module.exports = {getAll, getSingle, createContact, updateContact};
+
+const deleteContact = async (req, res, next) => {
+  const userId = new ObjectId(req.params.id);
+  const result = await mongodb
+    .getDb()
+    .db("Guero")
+    .collection("Cobian")
+    .deleteOne({_id: userId}, true);
+  console.log(result);
+  if (result.deletedCount > 0) {
+    res.status(200).send();
+  } else {
+    res.status(500).json(result.error || "Some error occurred while deleted the contact.");
+  }
+};
+module.exports = {
+  getAll,
+  getSingle,
+  createContact,
+  updateContact,
+  deleteContact,
+};
