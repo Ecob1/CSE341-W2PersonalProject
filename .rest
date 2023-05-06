@@ -37,7 +37,7 @@ content-type: application/json
 }
 
 ###
-PUT http://localhost:3000/contacts/644c7baf2d216b2c35f77681 HTTP/1.1
+PUT http://localhost:3000/contacts/645586643d66c4e2c2cd43e8 HTTP/1.1
 content-type: application/json
 
 {
@@ -50,3 +50,39 @@ content-type: application/json
 
 ###
 DELETE  http://localhost:3000/contacts/6454d604174aaed2180a3c39 HTTP/1.1
+
+
+###
+GET https://edgar-y7p9.onrender.com/contacts HTTP/1.1
+
+###
+// Creating new contacts that returns the ID of the new contact and a 201 status.
+POST https://edgar-y7p9.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Alejandro",
+    "lastName": "Wies",
+    "email": "email",
+    "favoriteColor": "blue",
+    "birthday": "04/03/2001"
+}
+
+
+###
+// Replacing a new contact and returning a 204 status.
+PUT https://edgar-y7p9.onrender.com/contacts/6456cd33c122b4525ba211db HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Angel",
+    "lastName": "Olmedo",
+    "email": "email",
+    "favoriteColor": "blue",
+    "birthday": "04/03/2001"
+}
+
+###
+// Deleting a contact that returns a 200 status
+DELETE  https://edgar-y7p9.onrender.com/contacts/6456cd33c122b4525ba211db HTTP/1.1
+
