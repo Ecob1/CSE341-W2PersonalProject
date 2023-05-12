@@ -19,3 +19,5 @@ swaggerAutogen(outputFile, endpointsFiles, doc);
 // swaggerAutogen(outputFile, endpointsFiles, doc).then(async () => {
 //   await import('./index.js');
 // });
+
+// Asegurandome que es el archivo correcto.
