@@ -3,10 +3,8 @@ const ObjectId = require("mongodb").ObjectId;
 // Creating a function to get all the contacts.
 const getAll = async (req, res, next) => {
   const result = await mongodb.getDb().db("Guero").collection("Cobian").find();
-
-  
   result.toArray().then((lists) => {
-    console.log(lists)
+    console.log(lists);
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(lists);
   });
@@ -87,7 +85,9 @@ const deleteContact = async (req, res, next) => {
   if (result.deletedCount > 0) {
     res.status(200).send();
   } else {
-    res.status(500).json(result.error || "Some error occurred while deleted the contact.");
+    res
+      .status(500)
+      .json(result.error || "Some error occurred while deleted the contact.");
   }
 };
 module.exports = {

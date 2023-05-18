@@ -37,14 +37,14 @@ content-type: application/json
 }
 
 ###
-PUT http://localhost:3000/contacts/645586643d66c4e2c2cd43e8 HTTP/1.1
+PUT http://localhost:3000/contacts/f HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Omar",
-    "lastName": "Naranjo",
-    "email": "email",
-    "favoriteColor": "blue",
+    "firstName": "Miguel",
+    "lastName": "Ortega",
+    "email": "mortega@yahoo.com",
+    "favoriteColor": "yellow",
     "birthday": "04/03/2001"
 }
 
@@ -75,9 +75,9 @@ PUT https://edgar-y7p9.onrender.com/contacts/6456cd33c122b4525ba211db HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Angel",
-    "lastName": "Olmedo",
-    "email": "email",
+    "firstName": "Brandon",
+    "lastName": "Escalante",
+    "email": "bescalante@gmail.com",
     "favoriteColor": "blue",
     "birthday": "04/03/2001"
 }
